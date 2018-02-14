@@ -45,8 +45,10 @@ const properties = {
 function makeResponse (res) {
   return Object.create({
     __proto__: res,
-    _response: res
-  }, properties)
+  }, {
+    ...properties,
+    _response: { value: res }
+  })
 }
 
 
